@@ -2372,7 +2372,7 @@ data_type是数据类型，目前仅支持以下数据类型
 
         if(url.indexOf('en') != -1){
           //英文
-          btnSpotSelect.innerHTML = 'Spot'
+          btnSpotSelect.innerHTML = 'Spot v3'
           lang_btn.innerHTML = '中文';
           btn_spot.innerHTML = 'Spot v3';
           btn_spot_v4.innerHTML = 'Spot v4'
@@ -2387,7 +2387,7 @@ data_type是数据类型，目前仅支持以下数据类型
 
         }else{
           //中文
-          btnSpotSelect.innerHTML = '现货'
+          btnSpotSelect.innerHTML = '现货 v3'
           lang_btn.innerHTML = 'English';
           btn_spot.innerHTML = '现货 v3';
           btn_spot_v4.innerHTML = '现货 v4'
@@ -2402,6 +2402,11 @@ data_type是数据类型，目前仅支持以下数据类型
         }
 
         if(location.href.indexOf('/spot/v4/') > 0){
+          if(url.indexOf('en') != -1) {
+            btnSpotSelect.innerHTML = 'Spot v4'
+          } else {
+            btnSpotSelect.innerHTML = '现货 v4'
+          }
           btn_spot_v4.className = 'current';
           btn_contract_coin.className = '';
           btn_contract.className = '';
