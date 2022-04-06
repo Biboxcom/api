@@ -4881,14 +4881,13 @@
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">CryptoJS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">crypto-js</span><span class="dl">"</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">request</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://api.bibox.com/v3.1/orderpending/trade</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://api.bibox.com/v3/spot/order/trade</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="nx">apikey</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">900625568558820892a8c833c33ebc8fd2701efe</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//your apikey</span>
 <span class="kd">let</span> <span class="nx">secret</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">c708ac3e70d115ec29efbee197330627d7edf842</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//your apikey secret</span>
 
 <span class="kd">let</span> <span class="nx">param</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">pair</span><span class="p">:</span> <span class="dl">'</span><span class="s1">BIX_USDT</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">account_type</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="na">order_side</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="na">order_type</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="na">price</span><span class="p">:</span> <span class="mf">0.05458</span><span class="p">,</span>
@@ -4948,10 +4947,9 @@
 
 
 <span class="k">def</span> <span class="nf">do_request</span><span class="p">():</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="s">'/v3.1/orderpending/trade'</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s">'/v3/spot/order/trade'</span>
     <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s">'pair'</span><span class="p">:</span> <span class="s">'BIX_USDT'</span><span class="p">,</span>
-        <span class="s">'account_type'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s">'order_side'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="s">'order_type'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="s">'price'</span><span class="p">:</span> <span class="mf">0.05458</span><span class="p">,</span>
@@ -5017,14 +5015,13 @@
           <span class="c1">// Call asynchronous network methods in a try/catch block to handle exceptions.</span>
           <span class="k">try</span>
           <span class="p">{</span>
-             <span class="kt">string</span> <span class="n">uri</span> <span class="p">=</span> <span class="s">"https://api.bibox.com/v3.1/orderpending/trade"</span><span class="p">;</span>
+             <span class="kt">string</span> <span class="n">uri</span> <span class="p">=</span> <span class="s">"https://api.bibox.com/v3/spot/order/trade"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">apikey</span> <span class="p">=</span> <span class="s">"900625568558820892a8c833c33ebc8fd2701efe"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">"c708ac3e70d115ec29efbee197330627d7edf842"</span><span class="p">;</span>
 
              <span class="kt">string</span> <span class="n">timestamp</span> <span class="p">=</span> <span class="nf">GetTimeStamp</span><span class="p">();</span>
              <span class="kt">var</span> <span class="n">myobj</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span>
                 <span class="n">pair</span> <span class="p">=</span> <span class="s">"BIX_USDT"</span><span class="p">,</span>
-                <span class="n">account_type</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
                 <span class="n">order_side</span> <span class="p">=</span> <span class="m">2</span><span class="p">,</span>
                 <span class="n">order_type</span> <span class="p">=</span> <span class="m">2</span><span class="p">,</span>
                 <span class="n">price</span> <span class="p">=</span> <span class="s">"0.05458"</span><span class="p">,</span>
@@ -5066,7 +5063,7 @@
 <li>1.请求路径</li>
 </ul>
 
-<p>POST https://api.bibox.com/v3.1/orderpending/trade</p>
+<p>POST https://api.bibox.com/v3/spot/order/trade</p>
 
 <ul>
 <li>2.请求参数</li>
@@ -5089,14 +5086,6 @@
 <td>交易对</td>
 <td></td>
 <td>BIX_BTC, ETH_BTC, ...</td>
-</tr>
-<tr>
-<td>account_type</td>
-<td>true</td>
-<td>integer</td>
-<td>账户类型</td>
-<td></td>
-<td>0-币币账户</td>
 </tr>
 <tr>
 <td>order_type</td>
@@ -5144,8 +5133,7 @@
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"12845594488036185"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cmd"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"order_id"</span><span class="p">:</span><span class="s2">"12845594488036185"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"state"</span><span class="p">:</span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -5164,8 +5152,12 @@
 <td>0代表成功，否则代表失败</td>
 </tr>
 <tr>
-<td>result</td>
+<td>order_id</td>
 <td>订单id</td>
+</tr>
+<tr>
+<td>status</td>
+<td>状态，-1 失败，0或1-待成交，2-部分成交，3-完全成交，4-部分撤销，5-完全撤销</td>
 </tr>
 <tr>
 <td>其它字段</td>
@@ -5179,7 +5171,7 @@
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">CryptoJS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">crypto-js</span><span class="dl">"</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">request</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://api.bibox.com/v3.1/orderpending/cancelTrade</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://api.bibox.com/v3/spot/order/cancel</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="nx">apikey</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">900625568558820892a8c833c33ebc8fd2701efe</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//your apikey</span>
 <span class="kd">let</span> <span class="nx">secret</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">c708ac3e70d115ec29efbee197330627d7edf842</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//your apikey secret</span>
@@ -5241,7 +5233,7 @@
 
 
 <span class="k">def</span> <span class="nf">do_request</span><span class="p">():</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="s">'/v3.1/orderpending/cancelTrade'</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s">'/v3/spot/order/cancel'</span>
     <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s">'orders_id'</span><span class="p">:</span> <span class="s">"12845594488036185"</span>
     <span class="p">}</span>
@@ -5305,7 +5297,7 @@
           <span class="c1">// Call asynchronous network methods in a try/catch block to handle exceptions.</span>
           <span class="k">try</span>
           <span class="p">{</span>
-             <span class="kt">string</span> <span class="n">uri</span> <span class="p">=</span> <span class="s">"https://api.bibox.com/v3.1/orderpending/cancelTrade"</span><span class="p">;</span>
+             <span class="kt">string</span> <span class="n">uri</span> <span class="p">=</span> <span class="s">"https://api.bibox.com/v3/spot/order/cancel"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">apikey</span> <span class="p">=</span> <span class="s">"900625568558820892a8c833c33ebc8fd2701efe"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">"c708ac3e70d115ec29efbee197330627d7edf842"</span><span class="p">;</span>
 
@@ -5349,7 +5341,7 @@
 <li>1.请求路径</li>
 </ul>
 
-<p>POST https://api.bibox.com/v3.1/orderpending/cancelTrade</p>
+<p>POST https://api.bibox.com/v3/spot/order/cancel</p>
 
 <ul>
 <li>2.请求参数</li>
@@ -5379,8 +5371,7 @@
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cmd"</span><span class="p">:</span><span class="s2">"cancelTrade"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"state"</span><span class="p">:</span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -5781,7 +5772,7 @@
 </tr>
 <tr>
 <td>status</td>
-<td>状态，-1 失败，0或1-待成交，2-部分成交，3-完全成交，4-部分撤销，5-完全撤销，6-待撤销</td>
+<td>状态，-1 失败，0或1-待成交，2-部分成交，3-完全成交，4-部分撤销，5-完全撤销</td>
 </tr>
 <tr>
 <td>其它字段</td>
@@ -6166,7 +6157,7 @@
 </tr>
 <tr>
 <td>status</td>
-<td>状态，-1 失败，0或1-待成交，2-部分成交，3-完全成交，4-部分撤销，5-完全撤销，6-待撤销</td>
+<td>状态，-1 失败，0或1-待成交，2-部分成交，3-完全成交，4-部分撤销，5-完全撤销</td>
 </tr>
 <tr>
 <td>其它字段</td>
@@ -6852,7 +6843,7 @@
 </tr>
 <tr>
 <td>status</td>
-<td>状态，-1 失败，0或1-待成交，2-部分成交，3-完全成交，4-部分撤销，5-完全撤销，6-待撤销</td>
+<td>状态，-1 失败，0或1-待成交，2-部分成交，3-完全成交，4-部分撤销，5-完全撤销</td>
 </tr>
 <tr>
 <td>其它字段</td>
@@ -13831,7 +13822,7 @@ k线某周期开始时间,
 </tr>
 <tr>
 <td>status</td>
-<td>状态，-1 失败，0或1-待成交，2-部分成交，3-完全成交，4-部分撤销，5-完全撤销，6-待撤销</td>
+<td>状态，-1 失败，0或1-待成交，2-部分成交，3-完全成交，4-部分撤销，5-完全撤销</td>
 </tr>
 <tr>
 <td>其它字段</td>
