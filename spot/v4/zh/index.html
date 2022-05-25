@@ -304,8 +304,8 @@
             </span>
 
             <span class="nav-select-drop">
-              <a href="/api/spot/v3/zh/" class="nav-select-item" id="btn_spot">现货v3</a>
               <a href="/api/spot/v4/zh/" class="nav-select-item" id="btn_spot_v4">现货v4</a>
+              <a href="/api/spot/v3/zh/" class="nav-select-item" id="btn_spot">现货v3</a>
             </span>
           </span>
           <span class="nav_cell nav_tab">
@@ -1603,8 +1603,45 @@ ticker: 最新成交信息</p>
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div><h2 id='subscribe-tickers'>Subscribe Tickers</h2>
-<p>...</p>
+<p><strong>订阅K线</strong></p>
 
+<blockquote>
+<p>发送以下请求可订阅Ticker</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SUBSCRIBE</span><span class="dl">"</span>
+  <span class="dl">"</span><span class="s2">params</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="dl">"</span><span class="s2">BTC_USDT.ticker</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">ETH_USDT.ticker</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>参数</li>
+</ul>
+
+<ol>
+<li>Ticker流名称格式如下：
+
+<ul>
+<li>&lt;symbol&gt;.ticker
+
+<ol>
+<li>&lt;symbol&gt; 是交易对名称，如BTC_USDT，ETH_USDT等</li>
+</ol></li>
+</ul></li>
+</ol>
+
+<blockquote>
+<p>数据流</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">stream”: </span><span class="dl">"</span><span class="nx">BTC_USDT</span><span class="p">.</span><span class="nx">ticker</span><span class="err">”</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">data”: { Ticker }
+}
+</span></code></pre></div>
 <hr>
 <h1 id='user-data-endpoints'>User Data Endpoints</h1>
 <!-- ## Object

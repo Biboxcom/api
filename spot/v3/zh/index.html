@@ -304,8 +304,8 @@
             </span>
 
             <span class="nav-select-drop">
-              <a href="/api/spot/v3/zh/" class="nav-select-item" id="btn_spot">现货v3</a>
               <a href="/api/spot/v4/zh/" class="nav-select-item" id="btn_spot_v4">现货v4</a>
+              <a href="/api/spot/v3/zh/" class="nav-select-item" id="btn_spot">现货v3</a>
             </span>
           </span>
           <span class="nav_cell nav_tab">
@@ -14655,13 +14655,13 @@ k线某周期开始时间,
           btn_spot_v4.className = '';
           spot_select.className = spot_select.className + ' current';
         }
-        else if(location.href.indexOf('/futures/') > 0){
+        else if(location.href.indexOf('/futures-coin/') > 0){
           btn_spot.className = '';
           btn_contract_coin.className = 'current';
           btn_contract.className = '';
           btn_spot_v4.className = '';
         }
-        else if(location.href.indexOf('/futures-coin/') > 0){
+        else if(location.href.indexOf('/futures/') > 0){
           btn_spot.className = '';
           btn_contract_coin.className = '';
           btn_contract.className = 'current';
