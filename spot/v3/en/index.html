@@ -5046,7 +5046,7 @@
 <span class="kd">let</span> <span class="nx">secret</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">c708ac3e70d115ec29efbee197330627d7edf842</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="nx">param</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">orders_id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">12845594488036185</span><span class="dl">"</span>
+    <span class="na">order_id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">12845594488036185</span><span class="dl">"</span>
 <span class="p">};</span>
 
 <span class="kd">let</span> <span class="nx">cmd</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">param</span><span class="p">);</span> <span class="c1">//format param</span>
@@ -5104,7 +5104,7 @@
 <span class="k">def</span> <span class="nf">do_request</span><span class="p">():</span>
     <span class="n">path</span> <span class="o">=</span> <span class="s">'/v3/spot/order/cancel'</span>
     <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s">'orders_id'</span><span class="p">:</span> <span class="s">"12845594488036185"</span>
+        <span class="s">'order_id'</span><span class="p">:</span> <span class="s">"12845594488036185"</span>
     <span class="p">}</span>
     <span class="n">headers</span> <span class="o">=</span> <span class="n">do_sign</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
     <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">BASE_URL</span> <span class="o">+</span> <span class="n">path</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
@@ -5172,7 +5172,7 @@
 
              <span class="kt">string</span> <span class="n">timestamp</span> <span class="p">=</span> <span class="nf">GetTimeStamp</span><span class="p">();</span>
              <span class="kt">var</span> <span class="n">myobj</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span>
-                <span class="n">orders_id</span> <span class="p">=</span> <span class="s">"12845594488036185"</span><span class="p">,</span>
+                <span class="n">order_id</span> <span class="p">=</span> <span class="s">"12845594488036185"</span><span class="p">,</span>
              <span class="p">};</span>
 
              <span class="kt">string</span> <span class="n">payload</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="nf">SerializeObject</span><span class="p">(</span><span class="n">myobj</span><span class="p">,</span> <span class="k">new</span> <span class="n">JsonSerializerSettings</span> <span class="p">{</span> <span class="n">ContractResolver</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SortContractResolver</span><span class="p">()</span> <span class="p">});</span>
@@ -5227,7 +5227,7 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>orders_id</td>
+<td>order_id</td>
 <td>true</td>
 <td>string</td>
 <td>order id</td>
