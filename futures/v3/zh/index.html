@@ -279,7 +279,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-4351036f.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-4f67ce97.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-628c1a7f.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-e033bdd3.js"></script>
 
@@ -308,8 +308,15 @@
               <a href="/api/spot/v3/zh/" class="nav-select-item" id="btn_spot">现货v3</a>
             </span>
           </span>
-          <span class="nav_cell nav_tab">
-            <a href="/api/futures/v3/zh/" id="btn_contract">U本位永续合约</a>
+          <span class="nav-select">
+            <span id="btn_contract-select">
+              U本位永续合约
+            </span>
+
+            <span class="nav-select-drop big">
+              <a href="/api/futures/v3/zh/" class="nav-select-item" id="btn_contract_v3">U本位永续合约 v3</a>
+              <a href="/api/futures/v4/zh/" class="nav-select-item" id="btn_contract_v4">U本位永续合约 v4</a>
+            </span>
           </span>
           <span class="nav_cell nav_tab">
             <a href="/api/futures-coin/v3/zh/" id="btn_contract_coin">币本位永续合约</a>
@@ -11238,7 +11245,9 @@ k线某周期开始时间,
         const lang_btn = document.getElementById('lang_box');
         const btn_spot_v4 = document.getElementById('btn_spot_v4');
         const btn_spot = document.getElementById('btn_spot');
-        const btn_contract = document.getElementById('btn_contract');
+        const btn_contract = document.getElementById('btn_contract-select');
+        const btn_contract_v3 = document.getElementById('btn_contract_v3')
+        const btn_contract_v4 = document.getElementById('btn_contract_v4')
         const btn_contract_coin = document.getElementById('btn_contract_coin')
 
         const btnSpotSelect = document.getElementById('btn_spot-select')
@@ -11256,12 +11265,15 @@ k线某周期开始时间,
           btn_spot_v4.innerHTML = 'Spot v4'
           btn_contract_coin.innerHTML = 'Contract Coin';
           btn_contract.innerHTML = 'Contract USDT';
+          btn_contract_v3.innerHTML = 'Contract USDT v3';
+          btn_contract_v4.innerHTML = 'Contract USDT v4';
 
           lang_btn.href = url.replace('en/', 'zh/');
           btn_spot.href = btn_spot.href.replace('zh/', 'en/');
           btn_spot_v4.href = btn_spot_v4.href.replace('zh/', 'en/')
           btn_contract_coin.href = btn_contract_coin.href.replace('zh/', 'en/');
-          btn_contract.href = btn_contract.href.replace('zh/', 'en/');
+          btn_contract_v3.href = btn_contract_v3.href.replace('zh/', 'en/');
+          btn_contract_v4.href = btn_contract_v4.href.replace('zh/', 'en/');
 
           biboxLogo.onclick = function () {
             window.location.href = 'https://www.bibox.tech/en'
@@ -11274,12 +11286,15 @@ k线某周期开始时间,
           btn_spot_v4.innerHTML = '现货 v4'
           btn_contract_coin.innerHTML = '币本位永续合约';
           btn_contract.innerHTML = 'U本位永续合约';
+          btn_contract_v3.innerHTML = 'U本位永续合约 v3';
+          btn_contract_v4.innerHTML = 'U本位永续合约 v4';
 
           lang_btn.href = url.replace('zh/', 'en/');
           btn_spot.href = btn_spot.href.replace('en/', 'zh/');
           btn_spot_v4.href = btn_spot_v4.href.replace('en/', 'zh/');
           btn_contract_coin.href = btn_contract_coin.href.replace('en/', 'zh/');
-          btn_contract.href = btn_contract.href.replace('en/', 'zh/');
+          btn_contract_v3.href = btn_contract_v3.href.replace('en/', 'zh/');
+          btn_contract_v4.href = btn_contract_v4.href.replace('en/', 'zh/');
           biboxLogo.onclick = function () {
             window.location.href = 'https://www.bibox.tech/zh'
           }
@@ -11291,12 +11306,14 @@ k线某周期开始时间,
           btn_contract.className = '';
           btn_spot.className = '';
           spot_select.className = spot_select.className + ' current';
-        } else if(location.href.indexOf('/spot/v4/') > 0){
+          btnSpotSelect.innerHTML = btnSpotSelect.innerHTML + ' v4'
+        } else if(location.href.indexOf('/spot/v3/') > 0){
           btn_spot.className = 'current';
           btn_contract_coin.className = '';
           btn_contract.className = '';
           btn_spot_v4.className = '';
           spot_select.className = spot_select.className + ' current';
+          btnSpotSelect.innerHTML = btnSpotSelect.innerHTML + ' v3'
         }
         else if(location.href.indexOf('/futures-coin/') > 0){
           btn_spot.className = '';
@@ -11304,11 +11321,25 @@ k线某周期开始时间,
           btn_contract.className = '';
           btn_spot_v4.className = '';
         }
+        else if(location.href.indexOf('/futures/v4') > 0){
+          btn_spot.className = '';
+          btn_contract_coin.className = '';
+          btn_contract.className = '';
+          btn_contract.innerHTML = btn_contract.innerHTML + ' v4';
+          btn_contract_v3.className = '';
+          btn_contract_v4.className = 'current';
+          btn_spot_v4.className = '';
+          console.log('futures-v4', btn_contract)
+        }
         else if(location.href.indexOf('/futures/') > 0){
           btn_spot.className = '';
           btn_contract_coin.className = '';
-          btn_contract.className = 'current';
+          btn_contract.innerHTML = btn_contract.innerHTML + ' v3';
+          btn_contract.className = '';
+          btn_contract_v4.className = '';
+          btn_contract_v3.className = 'current';
           btn_spot_v4.className = '';
+          console.log('futures-v3', btn_contract)
         }
 
         lang_btn.style.display = 'block';
