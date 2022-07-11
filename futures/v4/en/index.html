@@ -950,9 +950,21 @@
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ---------- | ---------- | ---------- | ---------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- --- |
-| symbol | string | No | Trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.<br/>Multiple trading pair codes can be specified as follows<br/> /pairs?symbol=4BTC_USDT,4ETH_USDT<br/> If not specified symbol parameter, it returns the information of all trading pairs |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>No</td>
+<td>Trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.<br/>Multiple trading pair codes can be specified as follows<br/> /pairs?symbol=4BTC_USDT,4ETH_USDT<br/> If not specified symbol parameter, it returns the information of all trading pairs</td>
+</tr>
+</tbody></table>
 
 <ul>
 <li>Data source</li>
@@ -1048,11 +1060,33 @@
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ------------- | ---------- | ---------- | ------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ------------ |
-| symbol | string | yes | trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc. |
-| level | int32 | no | Specifies the maximum level depth to return<br/>Valid values ​​1, 2, 5, 10, 20, 50, 100, 200, 500, 1000<br/>Default value 100 |
-| price_scale | integer | No | Specify the depth of consolidation by price. For example, the price of the specified trading pair has a maximum of 4 decimal places. <br/>price_scale=0, the price returned includes a maximum of 4 decimal places, and <br/>price_scale=1. The price contains up to 3 decimal places, and the order quantity is the sum of all orders in the price range of 0.0010<br/>The price returned when price_scale=2 contains up to 2 decimal places, and the order volume is the sum of all orders in the price range of 0.0100<br/> When price_scale=3, the price returned contains at most 1 decimal place, and the order quantity is the sum of all orders in the price range of 0.1000.<br/> The price returned when price_scale=4 contains at most 0 decimal places, and the order volume is the price range Sum of all orders in 1.0000<br/>Valid values ​​0, 1, 2, 3, 4, 5<br/>Default value 0 |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>yes</td>
+<td>trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.</td>
+</tr>
+<tr>
+<td>level</td>
+<td>int32</td>
+<td>no</td>
+<td>Specifies the maximum level depth to return<br/>Valid values ​​1, 2, 5, 10, 20, 50, 100, 200, 500, 1000<br/>Default value 100</td>
+</tr>
+<tr>
+<td>price_scale</td>
+<td>integer</td>
+<td>No</td>
+<td>Specify the depth of consolidation by price. For example, the price of the specified trading pair has a maximum of 4 decimal places. <br/>price_scale=0, the price returned includes a maximum of 4 decimal places, and <br/>price_scale=1. The price contains up to 3 decimal places, and the order quantity is the sum of all orders in the price range of 0.0010<br/>The price returned when price_scale=2 contains up to 2 decimal places, and the order volume is the sum of all orders in the price range of 0.0100<br/> When price_scale=3, the price returned contains at most 1 decimal place, and the order quantity is the sum of all orders in the price range of 0.1000.<br/> The price returned when price_scale=4 contains at most 0 decimal places, and the order volume is the price range Sum of all orders in 1.0000<br/>Valid values ​​0, 1, 2, 3, 4, 5<br/>Default value 0</td>
+</tr>
+</tbody></table>
 
 <blockquote>
 <p>Note: The data is sorted according to the best price, that is, the depth of the buy side is sorted by price from large to small, and the depth of the sell side is sorted by price from small to large</p>
@@ -1150,13 +1184,45 @@
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ------------ | ---------- | ---------- | -------------- -------------------------------------------------- ------------------------ |
-| symbol | string | yes | trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc. |
-| time_frame | string | Yes | K-line data time frame<br/>Valid values 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 12h, 1d, 3d, 1W or 1M |
-| before | int64 | No | utc time<br/>limited to return the latest time of the K-line record |
-| after | int64 | No | utc time<br/>limited to return the earliest time of the K-line record |
-| limit | integer | No | Get the maximum number of K-line records<br/>The default value is 100, and the maximum value is 1000 |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>yes</td>
+<td>trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.</td>
+</tr>
+<tr>
+<td>time_frame</td>
+<td>string</td>
+<td>Yes</td>
+<td>K-line data time frame<br/>Valid values 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 12h, 1d, 3d, 1W or 1M</td>
+</tr>
+<tr>
+<td>before</td>
+<td>int64</td>
+<td>No</td>
+<td>utc time<br/>limited to return the latest time of the K-line record</td>
+</tr>
+<tr>
+<td>after</td>
+<td>int64</td>
+<td>No</td>
+<td>utc time<br/>limited to return the earliest time of the K-line record</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>Get the maximum number of K-line records<br/>The default value is 100, and the maximum value is 1000</td>
+</tr>
+</tbody></table>
 
 <ul>
 <li>Parameter combinations and data sources supported by this interface</li>
@@ -1261,13 +1327,45 @@
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ------------ | ---------- | ---------- | -------------- -------------------------------------------------- ------------------------ |
-| symbol | string | yes | trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc. |
-| time_frame | string | Yes | K-line data time frame<br/>Valid values 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 12h, 1d, 3d, 1W or 1M |
-| before | int64 | No | utc time<br/>limited to return the latest time of the K-line record |
-| after | int64 | No | utc time<br/>limited to return the earliest time of the K-line record |
-| limit | integer | No | Get the maximum number of K-line records<br/>The default value is 100, and the maximum value is 1000     |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>yes</td>
+<td>trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.</td>
+</tr>
+<tr>
+<td>time_frame</td>
+<td>string</td>
+<td>Yes</td>
+<td>K-line data time frame<br/>Valid values 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 12h, 1d, 3d, 1W or 1M</td>
+</tr>
+<tr>
+<td>before</td>
+<td>int64</td>
+<td>No</td>
+<td>utc time<br/>limited to return the latest time of the K-line record</td>
+</tr>
+<tr>
+<td>after</td>
+<td>int64</td>
+<td>No</td>
+<td>utc time<br/>limited to return the earliest time of the K-line record</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>Get the maximum number of K-line records<br/>The default value is 100, and the maximum value is 1000</td>
+</tr>
+</tbody></table>
 
 <ul>
 <li>Parameter combinations and data sources supported by this interface</li>
@@ -1372,13 +1470,45 @@
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ------------ | ---------- | ---------- | -------------- -------------------------------------------------- ------------------------ |
-| symbol | string | yes | trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc. |
-| time_frame | string | Yes | K-line data time frame<br/>Valid values 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 12h, 1d, 3d, 1W or 1M |
-| before | int64 | No | utc time<br/>limited to return the latest time of the K-line record |
-| after | int64 | No | utc time<br/>limited to return the earliest time of the K-line record |
-| limit | integer | No | Get the maximum number of K-line records<br/>The default value is 100, the maximum value is 1000 |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>yes</td>
+<td>trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.</td>
+</tr>
+<tr>
+<td>time_frame</td>
+<td>string</td>
+<td>Yes</td>
+<td>K-line data time frame<br/>Valid values 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 12h, 1d, 3d, 1W or 1M</td>
+</tr>
+<tr>
+<td>before</td>
+<td>int64</td>
+<td>No</td>
+<td>utc time<br/>limited to return the latest time of the K-line record</td>
+</tr>
+<tr>
+<td>after</td>
+<td>int64</td>
+<td>No</td>
+<td>utc time<br/>limited to return the earliest time of the K-line record</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>Get the maximum number of K-line records<br/>The default value is 100, the maximum value is 1000</td>
+</tr>
+</tbody></table>
 
 <ul>
 <li>Parameter combinations and data sources supported by this interface</li>
@@ -1479,14 +1609,51 @@
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ------------ | ---------- | ---------- | -------------- -------------------------------- |
-| symbol | string | yes | trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc. |
-| start_time | int64 | no | limit the earliest time to return transaction records |
-| end_time | int64 | no | limit the latest time to return transaction records |
-| before | int64 | no | transaction id<br/>limited to return the maximum id of transaction records |
-| after | int64 | no | transaction id<br/>limited to return the maximum id of transaction records |
-| limit | integer | no | get the maximum number of records<br/>default 100, maximum 1000 |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>yes</td>
+<td>trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>int64</td>
+<td>no</td>
+<td>limit the earliest time to return transaction records</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>int64</td>
+<td>no</td>
+<td>limit the latest time to return transaction records</td>
+</tr>
+<tr>
+<td>before</td>
+<td>int64</td>
+<td>no</td>
+<td>transaction id<br/>limited to return the maximum id of transaction records</td>
+</tr>
+<tr>
+<td>after</td>
+<td>int64</td>
+<td>no</td>
+<td>transaction id<br/>limited to return the maximum id of transaction records</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>no</td>
+<td>get the maximum number of records<br/>default 100, maximum 1000</td>
+</tr>
+</tbody></table>
 
 <ul>
 <li>Parameter combinations and data sources supported by this interface</li>
@@ -1615,9 +1782,21 @@
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ---------- | ---------- | ---------- | ---------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- |
-| symbol | string | Yes | Trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.<br/>Multiple trading pair codes can be specified as follows<br/> /pairs?symbol=4BTC_USDT,4ETH_USDT |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.<br/>Multiple trading pair codes can be specified as follows<br/> /pairs?symbol=4BTC_USDT,4ETH_USDT</td>
+</tr>
+</tbody></table>
 
 <ul>
 <li>Data Source</li>
@@ -1908,10 +2087,21 @@ tagPrices: mark the price K line</p>
 <li>where the value of the method field is one of the following request types:</li>
 </ul>
 
-<p>| optional value | description |
-| ------------- | ----------------------------------- -------------------------------------------------- ---------------------- |
-| SUBSCRIBE | 1. Subscribe to the data stream<br/> 2. The parameter is a list of data stream names <br/> 3. After successful subscription, the server will send the data stream to the client when the market price changes |
-| UNSUBSCRIBE | 1. Unsubscribe data stream<br/> 2. The parameter is a list of data stream names <br/> 3. After successfully unsubscribing, the client will no longer receive the corresponding data stream |</p>
+<table><thead>
+<tr>
+<th>optional value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SUBSCRIBE</td>
+<td>1. Subscribe to the data stream<br/> 2. The parameter is a list of data stream names <br/> 3. After successful subscription, the server will send the data stream to the client when the market price changes</td>
+</tr>
+<tr>
+<td>UNSUBSCRIBE</td>
+<td>1. Unsubscribe data stream<br/> 2. The parameter is a list of data stream names <br/> 3. After successfully unsubscribing, the client will no longer receive the corresponding data stream</td>
+</tr>
+</tbody></table>
 <h2 id='subscribe-order-book'>Subscribe Order Book</h2>
 <p><strong>Subscribe in-depth information</strong></p>
 
@@ -2454,9 +2644,21 @@ If the price is the same, the quantity will be replaced directly.</p>
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ---------- | ---------- | ---------- | ---------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ---------------------------------------- |
-| asset | string | No | Asset code, such as USDT, etc.<br/>Multiple asset codes can be specified in the following form<br/> /v4/cbu/userdata/accounts?asset=BTC,ETH<br/> If no asset is specified parameter, returns the information of all assets |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>asset</td>
+<td>string</td>
+<td>No</td>
+<td>Asset code, such as USDT, etc.<br/>Multiple asset codes can be specified in the following form<br/> /v4/cbu/userdata/accounts?asset=BTC,ETH<br/> If no asset is specified parameter, returns the information of all assets</td>
+</tr>
+</tbody></table>
 
 <ul>
 <li>Data Source</li>
@@ -2622,16 +2824,63 @@ If the price is the same, the quantity will be replaced directly.</p>
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ------------ | ---------- | ---------- | -------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ------------------------------------------ |
-| asset | string | No | Asset code, such as USDT, etc.<br/>Multiple asset codes can be specified in the following form<br/> /v4/cbu/userdata/ledger?asset=BTC,ETH <br/> If no asset is specified parameter, then return the billing records of all assets |
-| start_time | int64 | No | Limit the earliest time to return bill records |
-| end_time | int64 | no | limit the latest time to return bill records |
-| before | int64 | No | Billing record id<br/>Limited to return the maximum id value of the billing record |
-| after | int64 | No | Billing record id<br/>Limited to return the minimum id value of the billing record |
-| limit | int32 | No | Limit the maximum number of returned billing records<br/>default 100 |
-| start_time | int64 | No | Limit the earliest time to return bill records |
-| start_time | int64 | No | Limit the earliest time to return bill records |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>asset</td>
+<td>string</td>
+<td>No</td>
+<td>Asset code, such as USDT, etc.<br/>Multiple asset codes can be specified in the following form<br/> /v4/cbu/userdata/ledger?asset=BTC,ETH <br/> If no asset is specified parameter, then return the billing records of all assets</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>int64</td>
+<td>No</td>
+<td>Limit the earliest time to return bill records</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>int64</td>
+<td>no</td>
+<td>limit the latest time to return bill records</td>
+</tr>
+<tr>
+<td>before</td>
+<td>int64</td>
+<td>No</td>
+<td>Billing record id<br/>Limited to return the maximum id value of the billing record</td>
+</tr>
+<tr>
+<td>after</td>
+<td>int64</td>
+<td>No</td>
+<td>Billing record id<br/>Limited to return the minimum id value of the billing record</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>int32</td>
+<td>No</td>
+<td>Limit the maximum number of returned billing records<br/>default 100</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>int64</td>
+<td>No</td>
+<td>Limit the earliest time to return bill records</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>int64</td>
+<td>No</td>
+<td>Limit the earliest time to return bill records</td>
+</tr>
+</tbody></table>
 
 <ul>
 <li>Data Source</li>
@@ -2869,14 +3118,51 @@ If the price is the same, the quantity will be replaced directly.</p>
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ----------------- | ---------- | ---------- | --------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- --------------------------- |
-| symbol | string | yes | trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc. |
-| order_side | string | Yes | Order direction, valid values ​​are 1 to open long, 2 to open short, 3 to close long, 4 to close short |
-| order_type | string | yes | order type, valid values ​​1 market order, 2 limit order |
-| client_order_id | string | No | Order id, a string with a valid value of int64 integer, it is recommended to use the Unix timestamp when submitting the order |
-| amount | decimal | No | Delegated amount |
-| price | decimal | No | Order Limit |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>yes</td>
+<td>trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.</td>
+</tr>
+<tr>
+<td>order_side</td>
+<td>string</td>
+<td>Yes</td>
+<td>Order direction, valid values ​​are 1 to open long, 2 to open short, 3 to close long, 4 to close short</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td>string</td>
+<td>yes</td>
+<td>order type, valid values ​​1 market order, 2 limit order</td>
+</tr>
+<tr>
+<td>client_order_id</td>
+<td>string</td>
+<td>No</td>
+<td>Order id, a string with a valid value of int64 integer, it is recommended to use the Unix timestamp when submitting the order</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>decimal</td>
+<td>No</td>
+<td>Delegated amount</td>
+</tr>
+<tr>
+<td>price</td>
+<td>decimal</td>
+<td>No</td>
+<td>Order Limit</td>
+</tr>
+</tbody></table>
 
 <blockquote>
 <p>Delegate object
@@ -3058,9 +3344,21 @@ If the order has more than 20 transactions, the object only contains the last 20
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ---------- | ---------- | ---------- | ---------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ------------- |
-| order_id | string | Yes | Order id<br/>Order id can be assigned by the exchange, <br/>Can also be user-defined (use the client_order_id parameter when submitting the order).<br/>When using self When defining an id, you need to add a &quot;c:&quot; prefix before the id.<br/>For example: when submitting a delegation, a custom id &quot;123&quot; is used, and when obtaining a delegation, you need to use &quot;c:123&quot;. |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Order id<br/>Order id can be assigned by the exchange, <br/>Can also be user-defined (use the client_order_id parameter when submitting the order).<br/>When using self When defining an id, you need to add a &quot;c:&quot; prefix before the id.<br/>For example: when submitting a delegation, a custom id &quot;123&quot; is used, and when obtaining a delegation, you need to use &quot;c:123&quot;.</td>
+</tr>
+</tbody></table>
 <h2 id='get-orders'>Get Orders</h2>
 <blockquote>
 <p>Request</p>
@@ -3246,16 +3544,63 @@ If the order has more than 20 transactions, the object only contains the last 20
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ------------ | ---------- | ---------- | -------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ------------------------------------------ |
-| ids | string | No | Order id<br>The order id can be assigned by the exchange,<br/>or user-defined (use the client_order_id parameter when submitting the order). <br>When using a custom id, you need to add a &quot;c:&quot; prefix before the id. <br/>For example: the custom id &quot;123&quot; is used when submitting the order, and &quot;c:123&quot; must be used when canceling the order. <br/>Multiple delegate ids can be specified in the following form<br/> &quot;123,124,125,c:200&quot; |
-| status | string | No | Valid values ​​unsettled, settled<br/>unsettled means get unsettled orders, the returned results are sorted in reverse order by order creation time<br/>settled means settled orders are acquired, and the returned results are sorted in reverse order by order settlement time <br/>Default unsettled |
-| symbol | string | No | Trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.<br/>Multiple trading pair codes can be specified in the following form<br/> /v4/cbu/userdata/orders?symbol=4BTC_USDT,4ETH_USDT <br/> When status=unsettled, not specifying symbol will return unsettled orders for all trading pairs<br/>When status=settled, symbol parameter must be given |
-| start_time | long | no | limit the last creation time of the returned delegate |
-| end_time | long | no | limit the last creation time of the returned delegate |
-| before | int64 | no | delegate update id<br/>limit return delegate&#39;s maximum update id |
-| after | int64 | no | delegate update id<br/>limit return delegate&#39;s minimum update id |
-| limit | long | No | Specify the maximum number of delegates to return |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ids</td>
+<td>string</td>
+<td>No</td>
+<td>Order id<br>The order id can be assigned by the exchange,<br/>or user-defined (use the client_order_id parameter when submitting the order). <br>When using a custom id, you need to add a &quot;c:&quot; prefix before the id. <br/>For example: the custom id &quot;123&quot; is used when submitting the order, and &quot;c:123&quot; must be used when canceling the order. <br/>Multiple delegate ids can be specified in the following form<br/> &quot;123,124,125,c:200&quot;</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>No</td>
+<td>Valid values ​​unsettled, settled<br/>unsettled means get unsettled orders, the returned results are sorted in reverse order by order creation time<br/>settled means settled orders are acquired, and the returned results are sorted in reverse order by order settlement time <br/>Default unsettled</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>No</td>
+<td>Trading pair code, such as 4BTC_USDT, 4ETH_USDT, etc.<br/>Multiple trading pair codes can be specified in the following form<br/> /v4/cbu/userdata/orders?symbol=4BTC_USDT,4ETH_USDT <br/> When status=unsettled, not specifying symbol will return unsettled orders for all trading pairs<br/>When status=settled, symbol parameter must be given</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>long</td>
+<td>no</td>
+<td>limit the last creation time of the returned delegate</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>long</td>
+<td>no</td>
+<td>limit the last creation time of the returned delegate</td>
+</tr>
+<tr>
+<td>before</td>
+<td>int64</td>
+<td>no</td>
+<td>delegate update id<br/>limit return delegate&#39;s maximum update id</td>
+</tr>
+<tr>
+<td>after</td>
+<td>int64</td>
+<td>no</td>
+<td>delegate update id<br/>limit return delegate&#39;s minimum update id</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>long</td>
+<td>No</td>
+<td>Specify the maximum number of delegates to return</td>
+</tr>
+</tbody></table>
 
 <ul>
 <li><p>Parameter combinations and data sources supported by this interface</p>
@@ -3466,9 +3811,21 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <li>request parameters</li>
 </ul>
 
-<p>| Parameter name | Parameter type | Required or not | Description |
-| ---------- | ---------- | ---------- | ---------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- --------------- |
-| ids | string | yes | order id<br>The order id can be assigned by the exchange,<br/>or user-defined (use the client_order_id parameter when submitting the order). <br>When using a custom id, you need to add a &quot;c:&quot; prefix before the id. <br/>For example: the custom id &quot;123&quot; is used when submitting the order, and &quot;c:123&quot; must be used when canceling the order. <br/>Multiple delegate ids can be specified in the following form<br/> &quot;123,124,125,c:200&quot; |</p>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ids</td>
+<td>string</td>
+<td>yes</td>
+<td>order id<br>The order id can be assigned by the exchange,<br/>or user-defined (use the client_order_id parameter when submitting the order). <br>When using a custom id, you need to add a &quot;c:&quot; prefix before the id. <br/>For example: the custom id &quot;123&quot; is used when submitting the order, and &quot;c:123&quot; must be used when canceling the order. <br/>Multiple delegate ids can be specified in the following form<br/> &quot;123,124,125,c:200&quot;</td>
+</tr>
+</tbody></table>
 
 <blockquote>
 <p>If the order with the specified id has been settled, or there is no order with the specified id, you will receive a -3004 error.</p>
@@ -3664,8 +4021,8 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -3846,9 +4203,9 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <table><thead>
 <tr>
 <th>Parameter name</th>
-<th>The parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>illustrate</th>
+<th>Parameter type</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -4147,8 +4504,8 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -4421,8 +4778,8 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -4646,8 +5003,8 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -4852,8 +5209,8 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -5050,8 +5407,8 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -5310,8 +5667,8 @@ The returned setled orders are sorted by settlement time by earlier and most rec
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -5531,8 +5888,8 @@ The returned setled orders are sorted by settlement time by earlier and most rec
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -5765,8 +6122,8 @@ The returned setled orders are sorted by settlement time by earlier and most rec
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -5992,8 +6349,8 @@ The returned setled orders are sorted by settlement time by earlier and most rec
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -6225,8 +6582,8 @@ The returned setled orders are sorted by settlement time by earlier and most rec
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -6420,8 +6777,8 @@ The returned setled orders are sorted by settlement time by earlier and most rec
 <tr>
 <th>Parameter name</th>
 <th>Parameter type</th>
-<th>Whether it must be passed on or not</th>
-<th>Illustrate</th>
+<th>Required or not</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
