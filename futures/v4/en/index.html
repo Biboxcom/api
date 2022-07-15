@@ -2821,7 +2821,7 @@ If the price is the same, the quantity will be replaced directly.</p>
 <li>Request method GET</li>
 <li>Request path /v4/cbu/userdata/ledger</li>
 <li>Permissions: View, Trade</li>
-<li>request parameters</li>
+<li>request parameters (should be sorted)</li>
 </ul>
 
 <table><thead>
@@ -3371,7 +3371,7 @@ If the order has more than 20 transactions, the object only contains the last 20
 <span class="kd">const</span> <span class="nx">secret</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">b825a03636ca09c884ca11d71cfc4217a98cb8bf</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// your secret</span>
 
 
-<span class="kd">const</span> <span class="nx">queryStr</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">symbol=4BTC_USDT&amp;status=settled&amp;limit=2</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">queryStr</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">limit=2&amp;status=settled&amp;symbol=4BTC_USDT</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">expireTime</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">20000</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">signStr</span> <span class="o">=</span> <span class="nx">expireTime</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">queryStr</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">sign</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">HmacSHA256</span><span class="p">(</span><span class="nx">signStr</span><span class="p">,</span> <span class="nx">secret</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
@@ -3404,7 +3404,7 @@ If the order has more than 20 transactions, the object only contains the last 20
 
 <span class="k">def</span> <span class="nf">do_request</span><span class="p">():</span>
     <span class="n">path</span> <span class="o">=</span> <span class="s">'/v4/cbu/userdata/orders'</span>
-    <span class="n">query_str</span> <span class="o">=</span> <span class="s">'symbol=4BTC_USDT&amp;status=settled&amp;limit=2'</span>
+    <span class="n">query_str</span> <span class="o">=</span> <span class="s">'limit=2&amp;status=settled&amp;symbol=4BTC_USDT'</span>
     <span class="n">expireTime</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">+</span> <span class="mi">20000</span>
     <span class="n">sign_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span> <span class="o">+</span> <span class="s">':'</span> <span class="o">+</span> <span class="n">query_str</span>
     <span class="n">sign</span> <span class="o">=</span> <span class="n">hmac</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">SECRET_KEY</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">),</span> <span class="n">sign_str</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">),</span> <span class="n">hashlib</span><span class="p">.</span><span class="n">sha256</span><span class="p">).</span><span class="n">hexdigest</span><span class="p">()</span>
@@ -3466,7 +3466,7 @@ If the order has more than 20 transactions, the object only contains the last 20
              <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">"c708ac3e70d115ec29efbee197330627d7edf842"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">endpoints</span> <span class="p">=</span> <span class="s">"https://api.bibox.com/api"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="s">"/v4/cbu/userdata/orders"</span><span class="p">;</span>
-             <span class="kt">string</span> <span class="n">query_str</span> <span class="p">=</span> <span class="s">"symbol=4BTC_USDT&amp;status=settled&amp;limit=2"</span><span class="p">;</span>
+             <span class="kt">string</span> <span class="n">query_str</span> <span class="p">=</span> <span class="s">"limit=2&amp;status=settled&amp;symbol=4BTC_USDT"</span><span class="p">;</span>
 
              <span class="kt">string</span> <span class="n">expireTime</span> <span class="p">=</span> <span class="nf">GetExpireTime</span><span class="p">(</span><span class="m">20000</span><span class="p">);</span>
              <span class="kt">string</span> <span class="n">sign_str</span> <span class="p">=</span> <span class="n">expireTime</span> <span class="p">+</span> <span class="s">":"</span> <span class="p">+</span> <span class="n">query_str</span><span class="p">;</span>
@@ -3541,7 +3541,7 @@ If the order has more than 20 transactions, the object only contains the last 20
 <li>Request method GET</li>
 <li>Request path /v4/cbu/userdata/orders</li>
 <li>Permissions: View, Trade</li>
-<li>request parameters</li>
+<li>request parameters (should be sorted)</li>
 </ul>
 
 <table><thead>
@@ -4048,7 +4048,7 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <span class="kd">const</span> <span class="nx">secret</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">b825a03636ca09c884ca11d71cfc4217a98cb8bf</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// your secret</span>
 
 
-<span class="kd">const</span> <span class="nx">queryStr</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">symbol=4BTC_USDT&amp;limit=2</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">queryStr</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">limit=2&amp;symbol=4BTC_USDT</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">expireTime</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">20000</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">signStr</span> <span class="o">=</span> <span class="nx">expireTime</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">queryStr</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">sign</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">HmacSHA256</span><span class="p">(</span><span class="nx">signStr</span><span class="p">,</span> <span class="nx">secret</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
@@ -4081,7 +4081,7 @@ The returned settled orders are sorted by settlement time from earliest to lates
 
 <span class="k">def</span> <span class="nf">do_request</span><span class="p">():</span>
     <span class="n">path</span> <span class="o">=</span> <span class="s">'/v4/cbu/userdata/fills'</span>
-    <span class="n">query_str</span> <span class="o">=</span> <span class="s">'symbol=4BTC_USDT&amp;limit=2'</span>
+    <span class="n">query_str</span> <span class="o">=</span> <span class="s">'limit=2&amp;symbol=4BTC_USDT'</span>
     <span class="n">expireTime</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">+</span> <span class="mi">20000</span>
     <span class="n">sign_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span> <span class="o">+</span> <span class="s">':'</span> <span class="o">+</span> <span class="n">query_str</span>
     <span class="n">sign</span> <span class="o">=</span> <span class="n">hmac</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">SECRET_KEY</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">),</span> <span class="n">sign_str</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">),</span> <span class="n">hashlib</span><span class="p">.</span><span class="n">sha256</span><span class="p">).</span><span class="n">hexdigest</span><span class="p">()</span>
@@ -4143,7 +4143,7 @@ The returned settled orders are sorted by settlement time from earliest to lates
              <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">"c708ac3e70d115ec29efbee197330627d7edf842"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">endpoints</span> <span class="p">=</span> <span class="s">"https://api.bibox.com/api"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="s">"/v4/cbu/userdata/fills"</span><span class="p">;</span>
-             <span class="kt">string</span> <span class="n">query_str</span> <span class="p">=</span> <span class="s">"symbol=4BTC_USDT&amp;limit=2"</span><span class="p">;</span>
+             <span class="kt">string</span> <span class="n">query_str</span> <span class="p">=</span> <span class="s">"limit=2&amp;symbol=4BTC_USDT"</span><span class="p">;</span>
 
              <span class="kt">string</span> <span class="n">expireTime</span> <span class="p">=</span> <span class="nf">GetExpireTime</span><span class="p">(</span><span class="m">20000</span><span class="p">);</span>
              <span class="kt">string</span> <span class="n">sign_str</span> <span class="p">=</span> <span class="n">expireTime</span> <span class="p">+</span> <span class="s">":"</span> <span class="p">+</span> <span class="n">query_str</span><span class="p">;</span>
@@ -4197,7 +4197,7 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <li>Request method GET</li>
 <li>Request path /v4/cbu/userdata/fills</li>
 <li>Permission: View, Trade</li>
-<li>request parameters</li>
+<li>request parameters (should be sorted)</li>
 </ul>
 
 <table><thead>
@@ -5236,7 +5236,7 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <span class="kd">const</span> <span class="nx">secret</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">b825a03636ca09c884ca11d71cfc4217a98cb8bf</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// your secret</span>
 
 
-<span class="kd">const</span> <span class="nx">queryStr</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">symbol=4BTC_USDT&amp;status=settled&amp;limit=2</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">queryStr</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">limit=2&amp;status=settled&amp;symbol=4BTC_USDT</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">expireTime</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">20000</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">signStr</span> <span class="o">=</span> <span class="nx">expireTime</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">queryStr</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">sign</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">HmacSHA256</span><span class="p">(</span><span class="nx">signStr</span><span class="p">,</span> <span class="nx">secret</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
@@ -5269,7 +5269,7 @@ The returned settled orders are sorted by settlement time from earliest to lates
 
 <span class="k">def</span> <span class="nf">do_request</span><span class="p">():</span>
     <span class="n">path</span> <span class="o">=</span> <span class="s">'/v4/cbu/userdata/planOrders'</span>
-    <span class="n">query_str</span> <span class="o">=</span> <span class="s">'symbol=4BTC_USDT&amp;status=settled&amp;limit=2'</span>
+    <span class="n">query_str</span> <span class="o">=</span> <span class="s">'limit=2&amp;status=settled&amp;symbol=4BTC_USDT'</span>
     <span class="n">expireTime</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">+</span> <span class="mi">20000</span>
     <span class="n">sign_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span> <span class="o">+</span> <span class="s">':'</span> <span class="o">+</span> <span class="n">query_str</span>
     <span class="n">sign</span> <span class="o">=</span> <span class="n">hmac</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">SECRET_KEY</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">),</span> <span class="n">sign_str</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">),</span> <span class="n">hashlib</span><span class="p">.</span><span class="n">sha256</span><span class="p">).</span><span class="n">hexdigest</span><span class="p">()</span>
@@ -5331,7 +5331,7 @@ The returned settled orders are sorted by settlement time from earliest to lates
              <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">"c708ac3e70d115ec29efbee197330627d7edf842"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">endpoints</span> <span class="p">=</span> <span class="s">"https://api.bibox.com/api"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="s">"/v4/cbu/userdata/planOrders"</span><span class="p">;</span>
-             <span class="kt">string</span> <span class="n">query_str</span> <span class="p">=</span> <span class="s">"symbol=4BTC_USDT&amp;status=settled&amp;limit=2"</span><span class="p">;</span>
+             <span class="kt">string</span> <span class="n">query_str</span> <span class="p">=</span> <span class="s">"limit=2&amp;status=settled&amp;symbol=4BTC_USDT"</span><span class="p">;</span>
 
              <span class="kt">string</span> <span class="n">expireTime</span> <span class="p">=</span> <span class="nf">GetExpireTime</span><span class="p">(</span><span class="m">20000</span><span class="p">);</span>
              <span class="kt">string</span> <span class="n">sign_str</span> <span class="p">=</span> <span class="n">expireTime</span> <span class="p">+</span> <span class="s">":"</span> <span class="p">+</span> <span class="n">query_str</span><span class="p">;</span>
@@ -5400,7 +5400,7 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <li>Request method GET</li>
 <li>Request path /v4/cbu/userdata/planOrders</li>
 <li>Permission: View, Trade</li>
-<li>request parameters</li>
+<li>request parameters (should be sorted)</li>
 </ul>
 
 <table><thead>
@@ -5660,7 +5660,7 @@ The returned setled orders are sorted by settlement time by earlier and most rec
 <li>Request method GET</li>
 <li>Request path /v4/cbu/userdata/positions</li>
 <li>Permission: View, Trade</li>
-<li>request parameters</li>
+<li>request parameters (should be sorted)</li>
 </ul>
 
 <table><thead>
@@ -6617,7 +6617,7 @@ The returned setled orders are sorted by settlement time by earlier and most rec
 <span class="kd">const</span> <span class="nx">secret</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">b825a03636ca09c884ca11d71cfc4217a98cb8bf</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// your secret</span>
 
 
-<span class="kd">const</span> <span class="nx">queryStr</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">symbol=4BTC_USDT&amp;limit=2</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">queryStr</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">limit=2&amp;symbol=4BTC_USDT</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">expireTime</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">20000</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">signStr</span> <span class="o">=</span> <span class="nx">expireTime</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">queryStr</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">sign</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">HmacSHA256</span><span class="p">(</span><span class="nx">signStr</span><span class="p">,</span> <span class="nx">secret</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
@@ -6650,7 +6650,7 @@ The returned setled orders are sorted by settlement time by earlier and most rec
 
 <span class="k">def</span> <span class="nf">do_request</span><span class="p">():</span>
     <span class="n">path</span> <span class="o">=</span> <span class="s">'/v4/cbu/userdata/dealLog'</span>
-    <span class="n">query_str</span> <span class="o">=</span> <span class="s">'symbol=4BTC_USDT&amp;limit=2'</span>
+    <span class="n">query_str</span> <span class="o">=</span> <span class="s">'limit=2&amp;symbol=4BTC_USDT'</span>
     <span class="n">expireTime</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">+</span> <span class="mi">20000</span>
     <span class="n">sign_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span> <span class="o">+</span> <span class="s">':'</span> <span class="o">+</span> <span class="n">query_str</span>
     <span class="n">sign</span> <span class="o">=</span> <span class="n">hmac</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">SECRET_KEY</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">),</span> <span class="n">sign_str</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">),</span> <span class="n">hashlib</span><span class="p">.</span><span class="n">sha256</span><span class="p">).</span><span class="n">hexdigest</span><span class="p">()</span>
@@ -6712,7 +6712,7 @@ The returned setled orders are sorted by settlement time by earlier and most rec
              <span class="kt">string</span> <span class="n">secret</span> <span class="p">=</span> <span class="s">"c708ac3e70d115ec29efbee197330627d7edf842"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">endpoints</span> <span class="p">=</span> <span class="s">"https://api.bibox.com/api"</span><span class="p">;</span>
              <span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="s">"/v4/cbu/userdata/dealLog"</span><span class="p">;</span>
-             <span class="kt">string</span> <span class="n">query_str</span> <span class="p">=</span> <span class="s">"symbol=4BTC_USDT&amp;limit=2"</span><span class="p">;</span>
+             <span class="kt">string</span> <span class="n">query_str</span> <span class="p">=</span> <span class="s">"limit=2&amp;symbol=4BTC_USDT"</span><span class="p">;</span>
 
              <span class="kt">string</span> <span class="n">expireTime</span> <span class="p">=</span> <span class="nf">GetExpireTime</span><span class="p">(</span><span class="m">20000</span><span class="p">);</span>
              <span class="kt">string</span> <span class="n">sign_str</span> <span class="p">=</span> <span class="n">expireTime</span> <span class="p">+</span> <span class="s">":"</span> <span class="p">+</span> <span class="n">query_str</span><span class="p">;</span>
@@ -6770,7 +6770,7 @@ The returned setled orders are sorted by settlement time by earlier and most rec
 <li>Request method GET</li>
 <li>Request path /v4/cbu/userdata/dealLog</li>
 <li>Permission: View, Trade</li>
-<li>request parameters</li>
+<li>request parameters (should be sorted)</li>
 </ul>
 
 <table><thead>
