@@ -6170,7 +6170,9 @@
                 </span><span class="nl">"deal_money"</span><span class="p">:</span><span class="s2">"0.00000000"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"deal_count"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"unexecuted"</span><span class="p">:</span><span class="s2">"100.0000"</span><span class="w">
+                </span><span class="nl">"unexecuted"</span><span class="p">:</span><span class="s2">"100.0000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"client_oid"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"order_from"</span><span class="p">:</span><span class="mi">1</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -6207,6 +6209,10 @@
 <tr>
 <td>id</td>
 <td>订单id</td>
+</tr>
+<tr>
+<td>client_oid</td>
+<td>用户自定义id</td>
 </tr>
 <tr>
 <td>createdAt</td>
@@ -6249,8 +6255,16 @@
 <td>成交数量</td>
 </tr>
 <tr>
+<td>deal_price</td>
+<td>成交均价</td>
+</tr>
+<tr>
 <td>deal_percent</td>
 <td>成交百分比</td>
+</tr>
+<tr>
+<td>deal_count</td>
+<td>成交笔数</td>
 </tr>
 <tr>
 <td>unexecuted</td>
@@ -6259,6 +6273,10 @@
 <tr>
 <td>status</td>
 <td>状态，-1 失败，0或1-待成交，2-部分成交，3-完全成交，4-部分撤销，5-完全撤销</td>
+</tr>
+<tr>
+<td>order_from</td>
+<td>订单来源</td>
 </tr>
 <tr>
 <td>其它字段</td>
