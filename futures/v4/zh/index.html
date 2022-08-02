@@ -314,8 +314,8 @@
             </span>
 
             <span class="nav-select-drop big">
-              <a href="/api/futures/v3/zh/" class="nav-select-item" id="btn_contract_v3">U本位永续合约 v3</a>
               <a href="/api/futures/v4/zh/" class="nav-select-item" id="btn_contract_v4">U本位永续合约 v4</a>
+              <a href="/api/futures/v3/zh/" class="nav-select-item" id="btn_contract_v3">U本位永续合约 v3</a>
             </span>
           </span>
           <span class="nav_cell nav_tab">
@@ -752,7 +752,7 @@
 <p><strong>生成Api Key</strong></p>
 
 <ul>
-<li>要创建签名，首先需要生成Api Key和Secret Key组合，具体步骤请参考____。请牢记在此过程中生成的Secret Key，因为该值仅显示一次，如果忘记了Secret Key，请删除该Api Key，并生成新的Api Key和Secret Key组合。</li>
+<li>要创建签名，首先需要生成Api Key和Secret Key组合。请牢记在此过程中生成的Secret Key，因为该值仅显示一次，如果忘记了Secret Key，请删除该Api Key，并生成新的Api Key和Secret Key组合。</li>
 </ul>
 
 <p><strong>HTTP 请求头</strong></p>
@@ -7510,6 +7510,7 @@ tagPrices: 标记价格K线</p>
           btn_spot.className = '';
           spot_select.className = spot_select.className + ' current';
           btnSpotSelect.innerHTML = btnSpotSelect.innerHTML + ' v4'
+          btnSpotSelect.innerHTML = btnSpotSelect.innerHTML.replace('v4 v4', 'v4');
         } else if(location.href.indexOf('/spot/v3/') > 0){
           btn_spot.className = 'current';
           btn_contract_coin.className = '';
@@ -7517,6 +7518,7 @@ tagPrices: 标记价格K线</p>
           btn_spot_v4.className = '';
           spot_select.className = spot_select.className + ' current';
           btnSpotSelect.innerHTML = btnSpotSelect.innerHTML + ' v3'
+          btnSpotSelect.innerHTML = btnSpotSelect.innerHTML.replace('v3 v3', 'v3');
         }
         else if(location.href.indexOf('/futures-coin/') > 0){
           btn_spot.className = '';
@@ -7532,7 +7534,6 @@ tagPrices: 标记价格K线</p>
           btn_contract_v3.className = '';
           btn_contract_v4.className = 'current';
           btn_spot_v4.className = '';
-          console.log('futures-v4', btn_contract)
         }
         else if(location.href.indexOf('/futures/') > 0){
           btn_spot.className = '';
@@ -7542,7 +7543,6 @@ tagPrices: 标记价格K线</p>
           btn_contract_v4.className = '';
           btn_contract_v3.className = 'current';
           btn_spot_v4.className = '';
-          console.log('futures-v3', btn_contract)
         }
 
         lang_btn.style.display = 'block';
