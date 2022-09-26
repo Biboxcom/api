@@ -3368,7 +3368,7 @@ tagPrices: 标记价格K线</p>
 <td>order_id</td>
 <td>string</td>
 <td>是</td>
-<td>委托id<br/>委托id可以是交易所分配的, <br/>也可以是用户自定义的 (在提交委托时使用client_order_id参数).<br/>当使用自定义id时, 需要在id前添加 “c:” 前缀.<br/>例如: 提交委托时使用了自定义id “123”, 在获取委托时, 需使用 “c:123”.</td>
+<td>委托id<br/>委托id可以是交易所分配的, <br/>也可以是用户自定义的 (在提交委托时使用client_order_id参数).<br/>当使用自定义id时, 需要在id前添加 “c-” 前缀.<br/>例如: 提交委托时使用了自定义id “123”, 在获取委托时, 需使用 “c-123”.</td>
 </tr>
 </tbody></table>
 <h2 id='get-orders'>Get Orders</h2>
@@ -3568,7 +3568,7 @@ tagPrices: 标记价格K线</p>
 <td>ids</td>
 <td>string</td>
 <td>否</td>
-<td>委托id<br>委托id可以是交易所分配的，<br/>也可以是用户自定义的（在提交委托时使用client_order_id参数）。<br>当使用自定义id时，需要在id前添加 “c:” 前缀。<br/>例如：提交委托时使用了自定义id “123”, 在撤销委托时，需使用 “c:123”。<br/>可按以下形式指定多个委托id<br/> &quot;123,124,125,c:200&quot;</td>
+<td>委托id<br>委托id可以是交易所分配的，<br/>也可以是用户自定义的（在提交委托时使用client_order_id参数）。<br>当使用自定义id时，需要在id前添加 “c-” 前缀。<br/>例如：提交委托时使用了自定义id “123”, 在撤销委托时，需使用 “c-123”。<br/>可按以下形式指定多个委托id<br/> &quot;123,124,125,c-200&quot;</td>
 </tr>
 <tr>
 <td>status</td>
@@ -3835,7 +3835,7 @@ tagPrices: 标记价格K线</p>
 <td>ids</td>
 <td>string</td>
 <td>是</td>
-<td>委托id<br>委托id可以是交易所分配的，<br/>也可以是用户自定义的（在提交委托时使用client_order_id参数）。<br>当使用自定义id时，需要在id前添加 “c:” 前缀。<br/>例如：提交委托时使用了自定义id “123”, 在撤销委托时，需使用 “c:123”。<br/>可按以下形式指定多个委托id<br/> &quot;123,124,125,c:200&quot;</td>
+<td>委托id<br>委托id可以是交易所分配的，<br/>也可以是用户自定义的（在提交委托时使用client_order_id参数）。<br>当使用自定义id时，需要在id前添加 “c-” 前缀。<br/>例如：提交委托时使用了自定义id “123”, 在撤销委托时，需使用 “c-123”。<br/>可按以下形式指定多个委托id<br/> &quot;123,124,125,c-200&quot;</td>
 </tr>
 </tbody></table>
 

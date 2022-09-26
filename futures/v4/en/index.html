@@ -3360,7 +3360,7 @@ If the order has more than 20 transactions, the object only contains the last 20
 <td>order_id</td>
 <td>string</td>
 <td>Yes</td>
-<td>Order id<br/>Order id can be assigned by the exchange, <br/>Can also be user-defined (use the client_order_id parameter when submitting the order).<br/>When using self When defining an id, you need to add a &quot;c:&quot; prefix before the id.<br/>For example: when submitting a delegation, a custom id &quot;123&quot; is used, and when obtaining a delegation, you need to use &quot;c:123&quot;.</td>
+<td>Order id<br/>Order id can be assigned by the exchange, <br/>Can also be user-defined (use the client_order_id parameter when submitting the order).<br/>When using self When defining an id, you need to add a &quot;c-&quot; prefix before the id.<br/>For example: when submitting a delegation, a custom id &quot;123&quot; is used, and when obtaining a delegation, you need to use &quot;c-123&quot;.</td>
 </tr>
 </tbody></table>
 <h2 id='get-orders'>Get Orders</h2>
@@ -3560,7 +3560,7 @@ If the order has more than 20 transactions, the object only contains the last 20
 <td>ids</td>
 <td>string</td>
 <td>No</td>
-<td>Order id<br>The order id can be assigned by the exchange,<br/>or user-defined (use the client_order_id parameter when submitting the order). <br>When using a custom id, you need to add a &quot;c:&quot; prefix before the id. <br/>For example: the custom id &quot;123&quot; is used when submitting the order, and &quot;c:123&quot; must be used when canceling the order. <br/>Multiple delegate ids can be specified in the following form<br/> &quot;123,124,125,c:200&quot;</td>
+<td>Order id<br>The order id can be assigned by the exchange,<br/>or user-defined (use the client_order_id parameter when submitting the order). <br>When using a custom id, you need to add a &quot;c-&quot; prefix before the id. <br/>For example: the custom id &quot;123&quot; is used when submitting the order, and &quot;c-123&quot; must be used when canceling the order. <br/>Multiple delegate ids can be specified in the following form<br/> &quot;123,124,125,c-200&quot;</td>
 </tr>
 <tr>
 <td>status</td>
@@ -3827,7 +3827,7 @@ The returned settled orders are sorted by settlement time from earliest to lates
 <td>ids</td>
 <td>string</td>
 <td>yes</td>
-<td>order id<br>The order id can be assigned by the exchange,<br/>or user-defined (use the client_order_id parameter when submitting the order). <br>When using a custom id, you need to add a &quot;c:&quot; prefix before the id. <br/>For example: the custom id &quot;123&quot; is used when submitting the order, and &quot;c:123&quot; must be used when canceling the order. <br/>Multiple delegate ids can be specified in the following form<br/> &quot;123,124,125,c:200&quot;</td>
+<td>order id<br>The order id can be assigned by the exchange,<br/>or user-defined (use the client_order_id parameter when submitting the order). <br>When using a custom id, you need to add a &quot;c-&quot; prefix before the id. <br/>For example: the custom id &quot;123&quot; is used when submitting the order, and &quot;c-123&quot; must be used when canceling the order. <br/>Multiple delegate ids can be specified in the following form<br/> &quot;123,124,125,c-200&quot;</td>
 </tr>
 </tbody></table>
 
